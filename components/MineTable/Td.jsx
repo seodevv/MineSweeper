@@ -116,6 +116,7 @@ const Td = memo(({ rowIndex, colIndex, data }) => {
     useContext(MineContext);
 
   const openCell = () => {
+    if (halted) return;
     if (
       [CODE.OPEND, CODE.FLAG, CODE.FLAG_MINE].includes(data) ||
       data > CODE.OPEND
@@ -128,6 +129,8 @@ const Td = memo(({ rowIndex, colIndex, data }) => {
 
   const setFlag = (e) => {
     e.preventDefault();
+    if (halted) return;
+
     if (![CODE.NORMAL, CODE.MINE, CODE.FLAG, CODE.FLAG_MINE].includes(data)) {
       return;
     }
@@ -143,6 +146,7 @@ const Td = memo(({ rowIndex, colIndex, data }) => {
   let targets = [];
 
   const mouseDown = (e) => {
+    if (halted) return;
     if (data < CODE.OPEND) return;
 
     if ((dbClick[0] && e.button === 2) || (dbClick[1] && e.button === 0)) {
@@ -163,6 +167,8 @@ const Td = memo(({ rowIndex, colIndex, data }) => {
   };
 
   const mouseUp = (e) => {
+    if (halted) return;
+
     if (dbClick) {
       dbClick = [false, false];
       if (targets.length !== 0) {
@@ -179,10 +185,10 @@ const Td = memo(({ rowIndex, colIndex, data }) => {
       <td
         className={`nondragable ${getClass(data, rowIndex, colIndex, diff)}`}
         id={`td_${rowIndex}_${colIndex}`}
-        onClick={!halted ? openCell : null}
-        onContextMenu={!halted ? setFlag : null}
-        onMouseDown={!halted ? mouseDown : null}
-        onMouseUp={!halted ? mouseUp : null}
+        onClick={openCell}
+        onContextMenu={setFlag}
+        onMouseDown={mouseDown}
+        onMouseUp={mouseUp}
       >
         {getText(data)}
       </td>
