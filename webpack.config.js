@@ -4,7 +4,7 @@ const RefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = {
   name: "mine-setting",
-  mode: "development", // development production
+  mode: "production", // development production
   devtool: "hidden-source-map", // eval hidden-source-map
   resolve: {
     extensions: [".js", ".jsx"],
