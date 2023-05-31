@@ -1,0 +1,259 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav,
+div {
+    box-sizing: border-box;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 250;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.background::after {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle;
+}
+
+.mine-container {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #fff;
+    vertical-align: middle;
+}
+
+.mine-info {
+    position: relative;
+    padding: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #4a752c;
+}
+
+.mine-info-left {
+    position: relative;
+}
+
+.mine-info-diff {
+    padding: 5px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mine-info-dropdown {
+    position: absolute;
+    z-index: 251;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s all ease;
+}
+
+.mine-info-dropdown ul {
+    margin: 3px 0 0 0;
+    padding: 5px;
+    padding-right: 10px;
+    list-style: none;
+    text-align: right;
+    box-shadow: 0 0 10px #000;
+    cursor: pointer;
+}
+
+.mine-info-dropdown-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.mine-info-center {
+    margin-right: 30px;
+    flex-grow: 2;
+}
+
+.mine-info-count {
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.mine-info-timer {
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.mine-info-reset {
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.mine-info-win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 252;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.mine-info-result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 253;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 300px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 15px;
+}
+
+.mine-info-clock {
+    margin-top: 15px;
+    font-size: 2rem;
+}
+
+.mine-info-result h2 {
+    margin: 0;
+}
+
+.mine-info-result h3 {
+    margin-top: 5px;
+    letter-spacing: 1px;
+    text-shadow: 0 5px 5px #555;
+}
+
+.mine-info-result-reset {
+    padding: 6px 12px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: #4a752c;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.mine-info-result-reset:hover {
+    filter: brightness(90%);
+}
+
+.mine-info-result-reset:active {
+    filter: brightness(80%);
+}
+
+.mine-table table {
+    border-collapse: collapse;
+}
+
+.mine-table-junior-td {
+    min-width: 35px;
+    height: 35px;
+    border: 1px solid #aad751;
+    font-weight: bold;
+}
+
+.mine-table-senior-td {
+    min-width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    font-weight: bold;
+}
+
+.mine-table-expert-td {
+    min-width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    font-weight: bold;
+}
+
+.mine-table-closed-odd {
+    background: #aad751;
+    opacity: 0.9;
+}
+
+.mine-table-closed-even {
+    background: #a2d149;
+    opacity: 0.9;
+}
+
+.mine-table-closed-odd:hover,
+.mine-table-closed-even:hover {
+    filter: brightness(95%);
+}
+
+.mine-table-closed-odd:active,
+.mine-table-closed-even:active {
+    filter: brightness(90%);
+}
+
+.mine-table-opend-odd {
+    background: #eed4a5;
+}
+
+.mine-table-opend-even {
+    background: #f7dcac;
+}
+
+.mine-table-opend-boom {
+    background: #b648f2;
+}
+
+.nondragable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.selected {
+    filter: brightness(105%);
+}
+
+.blue {
+    color: #3a84ce;
+}
+
+.green {
+    color: #3d903f;
+}
+
+.red {
+    color: #d32f2f;
+}
+
+.purple {
+    color: #8935a5;
+}
+
+.orange {
+    color: #ff8f00;
+}
