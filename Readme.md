@@ -2,5 +2,5 @@
 
 ### react application
 
-### Test
-[h](https://seodevv.github.io/MineSweeper/)
+### Test link
+[MineSweeper](https://seodevv.github.io/MineSweeper/)
